@@ -56,7 +56,7 @@
 
 div.location-a{
     width: 10%;
-    position: absolute;right: 0px;top: 0px;
+    position: fixed;right: 0px;top: 0px;
 }
 
 a.location:hover{
