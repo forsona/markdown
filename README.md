@@ -43,48 +43,82 @@
 
 ```
 
-<a class = "location" style="position: fixed;right: 200px;top: 50px;" href="javascript:history.go(-1);">后退</a>
-<a class = "location" style="position: fixed;right: 150px;top: 50px;" href="javascript:history.go(1);">前进</a>
-<a class = "location" style="position: fixed;right: 50px;top: 50px;" onclick="scrollBy( 0, -99999 )">回到顶部</a>
-<a class = "location" style="position: fixed;right: 50px;top: 100px;" onclick="scrollBy( 0, 99999 )">直达底部</a>
 
+
+<div class = "location-a">
+    <a class = "location back-a" href="javascript:history.go(-1);">后退</a>
+    <a class = "location forward-a" href="javascript:history.go(1);">前进</a>
+    <a class = "location top-a" onclick="scrollBy( 0, -99999 )">顶部</a>
+    <a class = "location bottom-a" onclick="scrollBy( 0, 99999 )">底部</a>
+</div>
 
 <style type="text/css">
+
+div.location-a{
+    width: 10%;
+    position: absolute;right: 0px;top: 0px;
+}
+
 a.location:hover{
-	cursor: pointer;
-	color:blue;
+    cursor: pointer;
+    color:blue;
 }
+
+a.back-a{
+    position: absolute;right: 5em;top: 1em;
+}
+
+a.forward-a{
+    position: absolute;right: 2em;top: 1em;
+}
+
+a.top-a{
+    position: absolute;right: 2em;top: 3em;
+}
+
+a.bottom-a{
+    position: absolute;right: 2em;top: 5em;
+}
+
 div.toc{
-	overflow:scroll; width:27%; height:100%;
-	position: fixed;left: 50px;top: 0px;
+    overflow:scroll; width:23%; height:100%;
+    position: fixed;left: 2%;top: 0px;
+    padding-top: 2%;
 }
+
+body{
+    width: 65%;
+    margin-left: 26%;
+}
+
 div.toc>ul>li>a{
-	font-weight: bold;
+    font-weight: bold;
 }
+
 .markdown-body pre>code{
-	white-space: pre-wrap;
-	word-break:break-all;
+    white-space: pre-wrap;
+    word-break:break-all;
 }
-</style>
 
 <audio src="resource/夏后&小贱-输给时间.mp3" hidden="true" autoplay="true" loop="true" id = "mp3">
 </audio>
+
 <script>
 document.onkeydown=function(event){
-           var e = event || window.event || arguments.callee.caller.arguments[0];          
+           var e = event || window.event || arguments.callee.caller.arguments[0];
             if(e && e.keyCode==13){ // enter 键
-            	var x = document.getElementById("mp3"); 
+                var x = document.getElementById("mp3");
                 if( x.paused ) {
-                	x.play();
+                    x.play();
                 } else {
-                	x.pause();
+                    x.pause();
                 }
             }
         };
 function audioPlay( $audioObj ){
-	$audioObj.play();
+    $audioObj.play();
 }
 function audioPause( $audioObj ){
-	$audioObj.pause();
+    $audioObj.pause();
 }
 </script>
