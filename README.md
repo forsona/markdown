@@ -28,12 +28,6 @@
 
 前进、后退、顶部、底部功能
 
-## 自带bgm
-
-- 需下载至本地，并生成为html，用MP在浏览器预览或者用预览markdown的软件打开是不会有音乐的
-
-- 回车键暂停或播放
-
 ## MP的设置
 
 ```
@@ -100,25 +94,5 @@ div.toc>ul>li>a{
     word-break:break-all;
 }
 
-<audio src="resource/夏后&小贱-输给时间.mp3" hidden="true" autoplay="true" loop="true" id = "mp3">
-</audio>
 
-<script>
-document.onkeydown=function(event){
-           var e = event || window.event || arguments.callee.caller.arguments[0];
-            if(e && e.keyCode==13){ // enter 键
-                var x = document.getElementById("mp3");
-                if( x.paused ) {
-                    x.play();
-                } else {
-                    x.pause();
-                }
-            }
-        };
-function audioPlay( $audioObj ){
-    $audioObj.play();
-}
-function audioPause( $audioObj ){
-    $audioObj.pause();
-}
-</script>
+</style>
